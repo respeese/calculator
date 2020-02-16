@@ -8,10 +8,10 @@ body {
     margin: 30px;
 }
 #calc-container {
-	border: 1px solid black;
+	border: 10px solid black;
 	background-color: rgb(56, 55, 148);
-	height: 400px;
-	width: 90%;
+	height: 600px;
+	width: 400px;
 	margin-left: auto;
     margin-right: auto;
 }
@@ -29,24 +29,46 @@ body {
 
 #all-buttons-container{
 	display:grid;
-	grid-template-columns: auto auto auto auto;
+/*	grid-template-columns: auto auto auto auto;
+*/	grid-template-areas: "back back ac ac";
 	margin: 30px;
 	height: 250px;
 }
 
 .button-container {
-	border: 1px solid black;
-	padding: 10px;
+/*	border: 1px solid black;
+*/	padding: 4px;
 	text-align: center;
-	background-color: rgb(209, 198, 247);
-}
+/*	background-color: rgb(209, 198, 247);
+*/}
 .calc-button{
 	text-align: center;
 	padding: 5px;
-	border: 1px solid black;
+	border: 2px solid black;
 	width: 100%;
 	height: 100%;
 	background-color: rgb(168, 168, 168);
 	font-size: 16px;
     font-weight: bold;
 }
+
+.operator-button {
+	background-color: rgb(123, 147, 199);
+}
+
+.clear-button {
+	background-color: rgb(227, 98, 98);
+}
+
+/*#num-grid-start {
+	grid-row: 2;
+}*/
+
+#back-button {
+	grid-area: back;
+}
+
+#ac-button {
+	grid-area: ac;
+}
+
