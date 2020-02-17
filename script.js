@@ -4,6 +4,7 @@ const numButtons = document.querySelectorAll('.num-button');
 const clearButtons = document.querySelectorAll('.clear-button');
 const operatorButtons = document.querySelectorAll('.operator-button');
 const equalButton = document.querySelector('.equal-button');
+const decButton = document.querySelector('.dec-button');
 let num1 = '';
 let num2 = '';
 let operator = "";
@@ -106,6 +107,37 @@ function addClearButton() {
 	})
 }
 
+function addDecButton() {
+	decButton.addEventListener('click', () => {
+		let strNum1 = num1.toString();
+		let strNum2 = num2.toString();
+		let decExists = false;
+		for(let i = 0; i<strNum1.length; i++) {
+			if(strNum1[i] == '.') {
+				decExists = true;
+			}
+		}
+		for(let i = 0; i<strNum2.length; i++) {
+			if(strNum2[i] == '.') {
+				decExists = true;
+			}
+		}
+		if(!decExists) {
+			if(operator == "") {
+				num1 += decButton.textContent;
+			}
+			else {
+				num2 += decButton.textContent;
+			}
+			displayValue += decButton.textContent;
+			displayScreen.textContent = displayValue;
+		}
+		else {
+			alert("You already have a '.' in your expression.");
+		}
+	})
+}
+
 function addOperatorButton() {
 	operatorButtons.forEach(button => {
 		button.addEventListener('click', () => {
@@ -161,6 +193,7 @@ addNumButton();
 addClearButton();
 addOperatorButton();
 addEqualButton();
+addDecButton();
 
 
 
