@@ -58,7 +58,19 @@ function addNumButton() {
 			}
 			else {
 				num2 += button.textContent;
-				result = operate(operator, num1, num2);
+				if(operator == '/' && num2 == 0) {
+					displayValue='';
+					displayScreen.textContent = "ERROR";
+					num1 = '';
+					num2 = '';
+					result = '';
+					operator = '';
+					alert("Oops! You cannot divide by zero. Cleared all numbers. Try again!");
+				}
+				else {
+					result = operate(operator, num1, num2);
+				}
+			
 			}
 		})
 	})
