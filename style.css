@@ -2,6 +2,14 @@ body {
 	background-color: rgb(247, 245, 255);
 }
 
+button{
+	opacity: 0.8;
+}
+button:hover {
+	opacity: 1;
+	border: 2px solid yellow;
+}
+
 #title-container {
 	text-align: center;
 	padding: 10px;
