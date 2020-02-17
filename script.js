@@ -88,8 +88,7 @@ function addClearButton() {
 				displayValue = backDisplayValue;
 				displayScreen.textContent = displayValue;
 				if(num1 != "" && num2 != ""){
-					result = operate(operator, num1, num2);
-				}
+					result = operate(operator, num1, num2);				}
 			}
 		})
 	})
@@ -127,11 +126,19 @@ function addOperatorButton() {
 
 function addEqualButton() {
 	equalButton.addEventListener('click', () => {
-		// num2 = displayValue;
-		// result = operate(operator, num1, num2);
-		displayScreen.textContent = result;
-		displayValue = result;
-		num1 = result;
+		if(result != "") {
+			displayScreen.textContent = result;
+			displayValue = result;
+			num1 = result;
+		}
+		else {
+			num1='';
+			displayValue='';
+			displayScreen.textContent = "ERROR";
+			alert("Oops! Don't forget to enter all the numbers/operators \nthat you need before pressing =. Try again!");
+
+		}
+		
 		num2 = '';
 		operator = "";
 	})
