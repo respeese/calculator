@@ -47,7 +47,6 @@ function operate(operator, num1, num2){
 }
 
 function addNumButton() {
-	//displayValue = "";
 	numButtons.forEach(button => {
 		button.addEventListener('click', () => {
 			displayValue += button.textContent;
@@ -61,7 +60,6 @@ function addNumButton() {
 				num2 += button.textContent;
 				result = operate(operator, num1, num2);
 			}
-			//operator = "";
 		})
 	})
 }
@@ -81,8 +79,17 @@ function addClearButton() {
 				for(let i = 0; i<(displayValue.length-1); i++) {
 					backDisplayValue += displayValue[i];
 				}
+				if(num1 == displayValue) {
+					num1 = backDisplayValue;
+				}
+				else if(num2 == displayValue) {
+					num2 = backDisplayValue;
+				}
 				displayValue = backDisplayValue;
 				displayScreen.textContent = displayValue;
+				if(num1 != "" && num2 != ""){
+					result = operate(operator, num1, num2);
+				}
 			}
 		})
 	})
@@ -125,7 +132,7 @@ function addEqualButton() {
 		displayScreen.textContent = result;
 		displayValue = result;
 		num1 = result;
-		num2 = '0';
+		num2 = '';
 		operator = "";
 	})
 }
