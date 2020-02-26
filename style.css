@@ -15,6 +15,12 @@ button:hover {
 	padding: 10px;
     margin: 30px;
 }
+
+h1{
+	font-family: 'Oxanium';
+	font-size: 2.4em;
+}
+
 #calc-container {
 	border: 10px solid black;
 	background-color: rgb(56, 55, 148);
@@ -37,18 +43,15 @@ button:hover {
 
 #all-buttons-container{
 	display:grid;
-/*	grid-template-columns: auto auto auto auto;
-*/	grid-template-areas: "back back ac ac";
+	grid-template-areas: "back back ac ac";
 	margin: 30px;
 	height: 250px;
 }
 
 .button-container {
-/*	border: 1px solid black;
-*/	padding: 4px;
+	padding: 4px;
 	text-align: center;
-/*	background-color: rgb(209, 198, 247);
-*/}
+}
 .calc-button{
 	text-align: center;
 	padding: 5px;
